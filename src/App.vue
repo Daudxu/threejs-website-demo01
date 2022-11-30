@@ -5,7 +5,7 @@
 
     <header class="header">
         <div class="logo">
-          
+          <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
         </div>
         <div class="menu">
           <a class="menuItem">首页</a>
@@ -247,13 +247,20 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100wh;
   color: #fff;
   display: flex;
-  justify-content: center;
+  width: 100%;
+  padding: 10px;
   align-items: center;
 }
-
+.menu {
+   margin-left: 10%;
+   
+}
+.menuItem {
+   padding: 20px;
+   font-size: 20px;
+}
 
 
 </style>
