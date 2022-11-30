@@ -4,7 +4,9 @@
     </div>
 
     <header class="header">
-        <div class="logo"></div>
+        <div class="logo">
+          
+        </div>
         <div class="menu">
           <a class="menuItem">首页</a>
           <a class="menuItem">星舰</a>
@@ -246,6 +248,12 @@ body {
   top: 0;
   left: 0;
   width: 100wh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 </style>
