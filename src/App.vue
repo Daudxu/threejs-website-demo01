@@ -8,23 +8,24 @@
           <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
         </div>
         <div class="menu">
-          <a class="menuItem">首页</a>
-          <a class="menuItem">星舰</a>
-          <a class="menuItem">星舰商城</a>
+          <a class="menuItem">Home</a>
+          <a class="menuItem">Starship Mall</a>
+          <a class="menuItem">Starship service</a>
+          <a class="menuItem">Starship maintenance</a>
         </div>
     </header>
     <div class="pages" ref="pages">
           <div class="page">
-            <h2 class="title">Tset title one</h2>
-            <p>轻松· 好玩· 有趣</p>
+            <h2 class="title">Starship Number 897025</h2>
+            <p>Starship class 3bei speed of light</p>
           </div>
           <div class="page">
-            <h2 class="title">Tset title two</h2>
-            <p>轻松· 好玩· 有趣</p>
+            <h2 class="title">Starship Number 897024</h2>
+            <p>Starship class 3bei speed of light</p>
           </div>
           <div class="page">
-            <h2 class="title">Tset title three</h2>
-            <p>轻松· 好玩· 有趣</p>
+            <h2 class="title">Starship Number 897023</h2>
+            <p>Starship class 3bei speed of light</p>
           </div>
     </div>
   </div>
@@ -99,8 +100,8 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
     dracoLoader.setDecoderConfig({type: "js"});
     let loader = new  GLTFLoader();
     loader.setDRACOLoader(loader);
-    loader.load("./models/cyberpunk_hovercar.glb", (gltf) => {
-      gltf.scene.scale.set(0.8, 0.8, 0.8)
+    loader.load("./models/lancelot-class_light_cruiser.glb", (gltf) => {
+      gltf.scene.scale.set(0.0001, 0.0001, 0.0001)
       gltf.scene.position.set(3, 0, 0)
       scene.add(gltf.scene)
 
@@ -131,14 +132,14 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
         timeline.to(gltf.scene.rotation, {
           duration: 0.5,
           x:y,
-          y:x,
+          y: (Math.PI) + x,
           duration: 1
         })
       })
     })
 
-    loader.load("./models/lancelot-class_light_cruiser.glb", (gltf) => {
-      gltf.scene.scale.set(0.0001, 0.0001, 0.0001)
+    loader.load("./models/cyberpunk_hovercar.glb", (gltf) => {
+      gltf.scene.scale.set(0.8, 0.8, 0.8)
       gltf.scene.position.set(3, -16, 0)
       scene.add(gltf.scene)
 
