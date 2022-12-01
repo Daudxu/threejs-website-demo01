@@ -89,14 +89,18 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
     light3.position.set(-1, 1, 1);
     scene.add(light3)
 
+    let light4 = new THREE.DirectionalLight(0xffffff, 1);
+    light4.position.set(0, 10, 0);
+    scene.add(light4)
+
     // 设置解压缩加载器
     let dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("./draco/gltf/");
     dracoLoader.setDecoderConfig({type: "js"});
     let loader = new  GLTFLoader();
     loader.setDRACOLoader(loader);
-    loader.load("./models/星战X7空间站.glb", (gltf) => {
-      gltf.scene.scale.set(0.1, 0.1, 0.1)
+    loader.load("./models/cyberpunk_hovercar.glb", (gltf) => {
+      gltf.scene.scale.set(0.8, 0.8, 0.8)
       gltf.scene.position.set(3, 0, 0)
       scene.add(gltf.scene)
 
@@ -114,8 +118,8 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
       })
     })
 
-    loader.load("./models/尼布隆B级警戒护航舰.glb", (gltf) => {
-      gltf.scene.scale.set(0.1, 0.1, 0.1)
+    loader.load("./models/spaceship_unitron.glb", (gltf) => {
+      gltf.scene.scale.set(0.3, 0.3, 0.3)
       gltf.scene.position.set(3, -8, 0)
       scene.add(gltf.scene)
 
@@ -133,8 +137,8 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
       })
     })
 
-    loader.load("./models/义军GR-75中型运输船运输舰.glb", (gltf) => {
-      // gltf.scene.scale.set(0.1, 0.1, 0.1)
+    loader.load("./models/lancelot-class_light_cruiser.glb", (gltf) => {
+      gltf.scene.scale.set(0.0001, 0.0001, 0.0001)
       gltf.scene.position.set(3, -16, 0)
       scene.add(gltf.scene)
 
@@ -176,8 +180,8 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
               y: page * -8,
               duration: 1
           })
-
-          gsap.to(page.value,{
+          console.log()
+          gsap.to(pages.value,{
             duration: 1,
             y: -page * window.innerHeight,
             duration: 1
@@ -186,7 +190,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 
    })
     
-   loader.load("./models/lowpoly月球.glb", (gltf)=>{
+   loader.load("./models/lowpoly.glb", (gltf)=>{
       let moon = gltf.scene.children[0];
 
       
@@ -260,6 +264,25 @@ body {
 .menuItem {
    padding: 20px;
    font-size: 20px;
+}
+.pages {
+   display: flex;
+   flex-direction: column;
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+.pages .page {
+  width: 100wh;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  padding: 250px;
+  box-sizing: border-box;
 }
 
 
